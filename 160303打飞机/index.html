@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="musicContainer">
+			<!--背景音乐-->
+			<audio src="音乐/game_music.mp3" loop="loop" id="background_music" autoplay></audio>
+			<!--子弹发射的音乐-->
+			<audio src="音乐/bullet.mp3" id="bullet_music"></audio>
+			<!--敌人被击落的音乐-->
+			<audio src="音乐/enemy1_down.mp3" id="enemy1_music"></audio>
+			<audio src="音乐/enemy2_down.mp3" id="enemy2_music"></audio>
+			<audio src="音乐/enemy3_down.mp3" id="enemy3_music"></audio>
+			<!--游戏结束-->
+			<audio src="音乐/game_over.mp3" id="gameOver_muisc"></audio>
+		</div>
+		
+		<canvas id="canvas"></canvas>
+	</body>
+	<!--工具类-->
+	<script type="text/javascript" src="js/判断设备类型.js"></script>
+	<!--引入准备工作 js-->
+	<script type="text/javascript" src="js/准备.js"></script>
+	<!--引入背景类-->
+	<script type="text/javascript" src="js/背景.js"></script>
+	<!--引入飞机类-->
+	<script type="text/javascript" src="js/飞机英雄.js"></script>
+	<!--引入操作类-->
+	<script type="text/javascript" src="js/操作类.js"></script>
+	<!--引入子弹类-->
+	<script type="text/javascript" src="js/子弹.js"></script>
+	<!--引入敌人类-->
+	<script type="text/javascript" src="js/敌军.js"></script>
+	
+	<!--主要控制逻辑-->
+	<script type="text/javascript">
+		// 测试代码
+		var background = new BackgroundClass();
+		background.drawBack();
+		
+		var planeHero = new PlaneHero();
+		planeHero.drawPlane();
+		
+		var bulletControlle = new BulletControllerClass();
+//		
+//		
+		var handle = new HandleClass();
+		handle.handlePlane(planeHero);
+//	
+		var enemyController = new EnemyControllerClass();
+//		
+		
+//		planeHero.bulletInfo.name = "bullet2";
+//		planeHero.bulletInfo.bulletWidth = 48;
+	
+	
+	// 定时器
+		setInterval(function(){
+	
+	context.clearRect(0,0,canvas.width,canvas.height);
+			background.backgroundMove(2);
+			planeHero.movePlane(5);
+			bulletControlle.moveBullet(planeHero);
+			enemyController.createAndShowEnemy();
+			handle.bulletFireEnemy(bulletControlle,enemyController);
+//			
+		},20);
+		
+	</script>
+	
+</html>
