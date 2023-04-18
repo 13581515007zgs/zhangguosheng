@@ -11,8 +11,8 @@ function PlaneHero(){
 	// 定义一个变量 用来记录飞机移动的方向
 	// 规定 0--左，1-右边 2-上 3-下 -1--飞机不动
 	this.direction = -1;
-	
-	// 子弹的信息
+
+	// 子弹的信息3333
 	this.bulletInfo = {name:"bullet1",bulletWidth:6,bulletHeight:14};
 	
 	 
