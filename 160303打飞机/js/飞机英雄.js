@@ -12,7 +12,7 @@ function PlaneHero() {
 	// 规定 0--左，1-右边 2-上 3-下 -1--飞机不动
 	this.direction = -1;
 
-	// 子弹的信息
+	// 子弹的信息2222
 	this.bulletInfo = { name: "bullet1", bulletWidth: 6, bulletHeight: 14 };
 
 
