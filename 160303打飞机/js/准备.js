@@ -4,10 +4,10 @@ var context = canvas.getContext("2d");
 var bulletMusic = document.getElementById("bullet_music");
 
 // 判断当前设备类型
-if(IsPC()){
+if (IsPC()) {
 	canvas.width = 320;
 	canvas.height = 568;
-}else{
+} else {
 	canvas.width = document.documentElement.clientWidth || document.body.clientWidth;
 	canvas.height = document.documentElement.clientHeight || document.body.clientHeight;
 }
